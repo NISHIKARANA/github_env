@@ -10,8 +10,9 @@ on:
 
 jobs:
   build_test:
-
     runs-on: ubuntu-latest
+    environment:
+      name: DEV
 
     steps:
     - uses: actions/checkout@v3
