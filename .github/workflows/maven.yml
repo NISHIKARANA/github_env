@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: DEV
+      env:
+       my_app: ${{secrets.DEV_SECRET}}
+    
+    
 
     steps:
     - uses: actions/checkout@v3
@@ -39,3 +43,7 @@ jobs:
       with:
         name: Package
         path: staging
+
+    env:
+     my_app: ${{secrets.DEV_SECRET}}
+ 
