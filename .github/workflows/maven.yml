@@ -6,7 +6,9 @@ on:
 jobs: 
    build_test:
     runs-on: ubuntu-latest
-    environment: DEV
+    environment:
+      name: DEV
+      url: https://example-dev-url.com
     env:
       my_app: ${{secrets.DEV_SECRET}}
 
