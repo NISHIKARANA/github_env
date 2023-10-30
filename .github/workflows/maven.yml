@@ -7,9 +7,10 @@ on:
     branches: [ "main" ]
 
 
-jobs:
-  build_test:
+jobs: 
+   build_test:
     runs-on: ubuntu-latest
+    environment: DEV
     env:
       my_app: ${{secrets.DEV_SECRET}}
 
@@ -25,7 +26,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
    
-  publish-job:
+   publish-job:
     runs-on: ubuntu-latest
     needs: build_test
     steps:
